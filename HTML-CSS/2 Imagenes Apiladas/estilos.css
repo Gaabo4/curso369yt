@@ -1,0 +1,77 @@
+body {
+    font-family: sans-serif;
+    background-color: aquamarine;
+}
+
+.imagenesContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.imagenesContainer .imagen {
+    position: relative;
+    margin-right: -20px;
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.imagenesContainer .imagen img {
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.imagenesContainer .imagen .nombre {
+    position: absolute;
+    background-color: black;
+    border-radius: 5px;
+    color: white;
+    display: none;
+    min-width: 100px;
+    width: 150px;
+    top: -40px;
+    padding: 10px 15px;
+}
+
+.imagenesContainer .imagen .nombre .text {
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+    width: 150px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.imagenesContainer .imagen:hover .nombre {
+    display: inline-block;
+    transform: translateY(-20px);
+}
+
+.imagenesContainer .imagen .nombre::before {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    left: 40%;
+    bottom: -20px;
+    border-top: 10px solid black;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+
+.imagenesContainer .imagen:hover img {
+    transform: translateY(-3px);
+}
+
+@media (max-width: 680px) {
+    .imagenesContainer {
+        flex-direction: column;
+        height: 180vh;
+    }
+}
